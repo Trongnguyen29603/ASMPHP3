@@ -8,6 +8,6 @@
       <input type="text" name="name" value="{{$categorys->name}}"  class="form-control ">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-    <button  class="btn btn-primary ml-5 "><a style="text-decoration: none; color: white;" href="/category">Category</a></button>
+    <button  class="btn btn-primary ml-5 "><a style="text-decoration: none; color: white;" href="{{route('route_category_index')}}">Category</a></button>
   </form>
 @endsection

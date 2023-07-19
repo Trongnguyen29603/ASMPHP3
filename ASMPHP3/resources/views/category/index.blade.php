@@ -1,7 +1,7 @@
 @extends('templates.layout')
 @section('content')
 
-<table border="1">
+<table class="table">
     <tr>
         <th>Id</th>
         <th>Name</th>
@@ -13,7 +13,8 @@
             <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
             <td>
-                <a href="category/edit/{{$item->id}}" >Sửa</a>
+                <td><a href="{{route('route_category_edit',['id'=>$item->id])}}">Sửa</a></td>
+                <td><a href="{{route('route_category_delete',['id'=>$item->id])}}">Xóa</a></td>
             </td>
             </tr>  
         @endforeach

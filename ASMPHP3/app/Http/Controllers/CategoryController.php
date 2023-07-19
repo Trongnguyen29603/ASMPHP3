@@ -13,6 +13,7 @@ class CategoryController extends Controller
     public function index(Request $request){
        $categorys = DB::table('category')
        ->select('id','name')
+       ->whereNull('deleted_at')
        ->get();
        return view('category.index',compact('categorys'));
     }
@@ -39,5 +40,11 @@ class CategoryController extends Controller
         }
         }
         return view('category.edit',compact('categorys'));
+    }
+    public function delete($id){
+
+        Category::where('id',$id)->delete();
+        Session::flash('success','xóa thanh cong sv'.$id);
+        return redirect()->route('route_category_index');
     }
 }

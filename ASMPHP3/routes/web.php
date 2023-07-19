@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('templates/layout');
 });
-Route::get('/category',[App\Http\Controllers\CategoryController::class,'index']);
+Route::get('/category',[App\Http\Controllers\CategoryController::class,'index'])->name('route_category_index');
 Route::match(['GET','POST'],'/category/add',[App\Http\Controllers\CategoryController::class,'add'])->name('route_category_add');
 Route::match(['GET','POST'],'/category/edit/{id}',[App\Http\Controllers\CategoryController::class,'edit'])->name('route_category_edit');
+Route::get('/category/delete/{id}',[App\Http\Controllers\CategoryController::class,'delete'])->name('route_category_delete');
