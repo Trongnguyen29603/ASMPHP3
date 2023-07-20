@@ -24,3 +24,7 @@ Route::get('/category',[App\Http\Controllers\CategoryController::class,'index'])
 Route::match(['GET','POST'],'/category/add',[App\Http\Controllers\CategoryController::class,'add'])->name('route_category_add');
 Route::match(['GET','POST'],'/category/edit/{id}',[App\Http\Controllers\CategoryController::class,'edit'])->name('route_category_edit');
 Route::get('/category/delete/{id}',[App\Http\Controllers\CategoryController::class,'delete'])->name('route_category_delete');
+//khoa_hoc
+Route::get('/khoa_hoc',[App\Http\Controllers\Khoa_hocController::class,'index'])->name('route_khoa_hoc_index');
+Route::match(['GET','POST'],'/khoa_hoc/add',[App\Http\Controllers\Khoa_hocController::class,'add'])->name('route_khoa_hoc_add');
+

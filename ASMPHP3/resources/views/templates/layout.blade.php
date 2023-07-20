@@ -44,11 +44,11 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="/category">
+                            <a class="nav-link" href="{{route('route_category_index')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Danh mục  khóa học
                             </a>
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{route('route_khoa_hoc_index')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                Khóa học
                             </a>

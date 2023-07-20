@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('price');
-            $table->string('describe');
-            $table->string('process');
+            $table->string('describe');//mô tả
+            $table->string('process');//chương trình
             $table->integer('id_category');
             $table->timestamps();
         });

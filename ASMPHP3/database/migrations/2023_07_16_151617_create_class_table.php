@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('describe');
             $table->string('process');
-            $table->integer('id_category');
+            $table->integer('id_khoa_hoc');
             $table->timestamps();
         });
     }
