@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\Session;
 class Khoa_hocController extends Controller
 {
     public function index(Request $request){
+
         $khoa_hoc = DB::table('category')
         ->join('khoa_hoc', 'category.id', '=', 'khoa_hoc.id_category')
         ->select('category.*','khoa_hoc.id as idkh','khoa_hoc.name as namekh','price','describe','process')//mình sẽ lấy các trường mà mình mong muốn
+        ->whereNull("khoa_hoc.deleted_at")
         ->get();
-        DB::table('khoa_hoc')->whereNull("deleted_at")->get();
        return view("khoa_hoc.index",compact('khoa_hoc'));
     }
    
@@ -35,10 +36,6 @@ class Khoa_hocController extends Controller
     }
     public function edit(Khoa_hocRequest $request,$id){
         $khoa_hocs = Khoa_hoc::find($id);
-       
-        // $categorys = DB::table('category')
-        // ->where('id',$id)
-        // ->get();
         if($request -> isMethod('POST')){
           Khoa_hoc::where('id',$id)
           ->update($request->except('_token'));
