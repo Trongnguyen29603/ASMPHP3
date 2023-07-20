@@ -12,13 +12,12 @@ use Illuminate\Support\Facades\Session;
 class Khoa_hocController extends Controller
 {
     public function index(Request $request){
-        $category = DB::table('khoa_hoc')
-        ->join('category', 'category.id', '=', 'khoa_hoc.id_category')
-        ->select('khoa_hoc.*', 'category.name')
+        $khoa_hoc = DB::table('category')
+        ->join('khoa_hoc', 'category.id', '=', 'khoa_hoc.id_category')
+        ->select('category.*','khoa_hoc.id as idkh','khoa_hoc.name as namekh','price','describe','process')//mình sẽ lấy các trường mà mình mong muốn
         ->get();
 
-       $khoa_hoc = DB:: table('khoa_hoc')->get();
-       return view("khoa_hoc.index",compact('khoa_hoc','category'));
+       return view("khoa_hoc.index",compact('khoa_hoc'));
     }
    
     public function add(Khoa_hocRequest $request){

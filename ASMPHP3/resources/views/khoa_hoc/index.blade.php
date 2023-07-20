@@ -14,20 +14,17 @@
     <tbody>
         @foreach ($khoa_hoc as $item)
             <tr>
-            <td>{{$item->id}}</td>
-            <td>{{$item->name}}</td>
+            <td>{{$item->idkh}}</td>
+            <td>{{$item->namekh}}</td>
             <td>{{$item->price}}</td>
             <td>{{$item->describe}}</td>
             <td>{{$item->process}}</td>
-            <td>{{$item->id_category}}</td>
+            <td>
+                <option value="{{$item->id}}">{{$item->name}}</option>
+            </td>
             {{-- <td>
-            @foreach($category as $loai)
-                <option value="{{$loai->id}}">{{$loai->name}}</option>
-             @endforeach
-            </td> --}}
-            {{-- <td>
-                <td><a href="{{route('route_category_edit',['id'=>$item->id])}}">Sửa</a></td>
-                <td><a href="{{route('route_category_delete',['id'=>$item->id])}}">Xóa</a></td>
+                <td><a href="{{route('route_khoa_hoc_edit',['id'=>$item->id])}}">Sửa</a></td>
+                <td><a href="{{route('route_khoa_hoc_delete',['id'=>$item->id])}}">Xóa</a></td>
             </td> --}}
             </tr>  
         @endforeach
