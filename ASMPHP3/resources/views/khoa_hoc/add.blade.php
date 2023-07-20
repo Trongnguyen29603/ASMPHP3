@@ -1,6 +1,6 @@
 @extends('templates.layout')
 @section('content')
-<form action="{{ route('route_khoa_hoc_add') }}" method="POST">
+<form action="{{route('route_khoa_hoc_add') }}" method="POST">
     @csrf
     <div class="mb-3">  
         <label class="form-label">Tên khóa hoc</label>

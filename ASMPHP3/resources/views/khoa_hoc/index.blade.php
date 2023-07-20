@@ -22,14 +22,14 @@
             <td>
                 <option value="{{$item->id}}">{{$item->name}}</option>
             </td>
-            {{-- <td>
-                <td><a href="{{route('route_khoa_hoc_edit',['id'=>$item->id])}}">Sửa</a></td>
-                <td><a href="{{route('route_khoa_hoc_delete',['id'=>$item->id])}}">Xóa</a></td>
-            </td> --}}
+            <td>
+                <td><a href="{{route('route_khoa_hoc_edit',['id'=>$item->idkh])}}">Sửa</a></td>
+                <td><a href="{{route('route_khoa_hoc_delete',['id'=>$item->idkh])}}">Xóa</a></td>
+            </td>
             </tr>  
         @endforeach
     </tbody>
 </table>
-<button  class="btn btn-primary ml-5 "><a style="text-decoration: none; color: white;" href="/category/add">New Category</a></button>
+<button  class="btn btn-primary ml-5 "><a style="text-decoration: none; color: white;" href="{{route('route_khoa_hoc_add')}}">New khóa học</a></button>
 @endsection
 

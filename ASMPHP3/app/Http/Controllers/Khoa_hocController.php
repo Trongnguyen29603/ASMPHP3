@@ -16,7 +16,7 @@ class Khoa_hocController extends Controller
         ->join('khoa_hoc', 'category.id', '=', 'khoa_hoc.id_category')
         ->select('category.*','khoa_hoc.id as idkh','khoa_hoc.name as namekh','price','describe','process')//mình sẽ lấy các trường mà mình mong muốn
         ->get();
-
+        DB::table('khoa_hoc')->whereNull("deleted_at")->get();
        return view("khoa_hoc.index",compact('khoa_hoc'));
     }
    
@@ -28,12 +28,31 @@ class Khoa_hocController extends Controller
          
          if($khoa_hoc->id){
             Session::flash('success','theem moi thanh cong');
-            return redirect()->route('route_category_add');
+            return redirect()->route('route_khoa_hoc_add');
          }
       }
         return view('khoa_hoc.add',compact('categorys'));
     }
-    public function edit(Request $request){
-        
+    public function edit(Khoa_hocRequest $request,$id){
+        $khoa_hocs = Khoa_hoc::find($id);
+       
+        // $categorys = DB::table('category')
+        // ->where('id',$id)
+        // ->get();
+        if($request -> isMethod('POST')){
+          Khoa_hoc::where('id',$id)
+          ->update($request->except('_token'));
+          if($request){
+            Session::flash('success','sua thanh cong sv');
+            return redirect()->route('route_khoa_hoc_edit',['id'=>$id]);
+        }
+        }
+        return view('khoa_hoc.edit',compact('khoa_hocs'));
+    }
+    public function delete($id){
+      
+        Khoa_hoc::where('id',$id)->delete();
+        Session::flash('success','xóa thanh cong sv'.$id);
+        return redirect()->route('route_khoa_hoc_index');
     }
 }

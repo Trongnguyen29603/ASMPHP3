@@ -36,7 +36,18 @@ class Khoa_hocRequest extends FormRequest
                       'process'=>'required',
                       'id_category'=>'required'
                    ]; 
-               break; 
+               break;
+               case'edit':
+                $rule = [
+                    "name"=> "required",
+                    "price"=>"required",
+                    'describe'=>'required',
+                    'process'=>'required',
+                    // 'id_category'=>'required'
+                 ]; 
+                 break;
+            
+
                  endswitch;   
              endswitch;   
              return $rule;

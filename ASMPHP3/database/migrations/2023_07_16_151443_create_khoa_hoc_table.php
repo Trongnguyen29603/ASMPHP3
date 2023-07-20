@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('process');//chương trình
             $table->integer('id_category');
             $table->timestamps();
+            $table->softDeletes(); 
         });
     }
 
