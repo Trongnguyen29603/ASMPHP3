@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('phone');
             $table->string('email');
-            $table->integer('password');
+                  
             $table->string('speciallzi');
             $table->string('image');
             $table->string('status');

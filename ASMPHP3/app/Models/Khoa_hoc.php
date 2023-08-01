@@ -9,5 +9,5 @@ class Khoa_hoc extends Model
 {
     use HasFactory,SoftDeletes;
     protected $table = "khoa_hoc";
-    protected $fillable = ['id','name','price','describe','process','id_category'];
+    protected $fillable = ['id','name','name_gv','price','describe','process','image','id_category'];
 }

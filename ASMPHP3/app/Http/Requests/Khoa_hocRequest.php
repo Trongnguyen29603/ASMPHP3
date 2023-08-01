@@ -31,18 +31,22 @@ class Khoa_hocRequest extends FormRequest
                  case'add':
                    $rule = [
                       "name"=> "required",
+                      'name_gv'=>"required",
                       "price"=>"required",
                       'describe'=>'required',
                       'process'=>'required',
+                      'image'=>"required",
                       'id_category'=>'required'
                    ]; 
                break;
                case'edit':
                 $rule = [
                     "name"=> "required",
+                    'name_gv'=>"required",
                     "price"=>"required",
                     'describe'=>'required',
                     'process'=>'required',
+                    'image'=>"required",
                     // 'id_category'=>'required'
                  ]; 
                  break;

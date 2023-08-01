@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('khoa_hoc', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('name_gv');//tên gv
             $table->integer('price');
             $table->string('describe');//mô tả
             $table->string('process');//chương trình
+            $table->string('image');
             $table->integer('id_category');
             $table->timestamps();
             $table->softDeletes(); 
