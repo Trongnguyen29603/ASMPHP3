@@ -1,6 +1,6 @@
 @extends('templates.layout')
 @section('content')
-<form action="{{route('route_khoa_hoc_edit',['id'=>$khoa_hocs->id]) }}" method="POST">
+<form action="{{route('route_khoa_hoc_edit',['id'=>$khoa_hocs->id]) }}" method="POST" enctype="multipart/form-data">
     @csrf
     <h1>Sửa khóa học</h1>
     <div class="mb-3">  

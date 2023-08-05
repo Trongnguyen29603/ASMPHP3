@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('bill', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('address');
             $table->integer('id_user');
             $table->integer('id_khoa_hoc');
-            $table->string('status');
             $table->timestamps();
         });
     }
