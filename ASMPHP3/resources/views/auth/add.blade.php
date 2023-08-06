@@ -1,18 +1,3 @@
-{{-- @extends('templates.layout')
-@section('content')
-<form action="{{route('route_login')}}" method="POST">
-    @csrf
-<div class="mb-3">
-    <label  class="form-label">Email</label>
-    <input type="email" name="email" class="form-control">
-</div>
-<div class="mb-3">
-    <label class="form-label">Password</label>
-    <input type="password" name="password" class="form-control"  >
-</div>
-    <button type="submit" class="btn btn-success">Đăng nhập</button>
-</form>
-@endsection --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@700&family=Inter:wght@400;500&family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <link
     rel="stylesheet"
@@ -33,7 +19,7 @@
   justify-content: center;
   flex-direction: column;
   height: 600px;
-  background-color: rgb(114, 181, 212);
+  background-color: rgb(49, 174, 232);
   padding: 50px;
   border-radius: 15px;
 }
@@ -53,25 +39,25 @@
     </style>
 </head>
 <body>
-   
     <div class="container">
-        <div class="lognin animate__animated animate__bounce">
-            <h1 class="animate__animated animate__bounce animate__infinite ">LOGIN</h1>
-            <form action="{{route('route_login')}}" method="POST">
-                @include('templates.errors')
-                @csrf
-        <div class="form-floating  mb-3">
-            <input type="email" class="form-control" name="email" >
-            <label for="floatingInput">Email address</label>
-          </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" name="password" >
-            <label for="floatingPassword">Password</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-          <p> Don't have account ?<a href="{{route('route_sigin_add')}}">Sign-Up</a></p>
-          <p> Do you want home ?<a href="#">Home</a></p>
+        <div class="lognin ">
+            <h1 class=" ">WELCOME</h1>
+         <form action="{{route('route_sigin_add')}}" class="formcheck" method="POST">
+            @csrf
+            <div class="input-group">
+                <input type="text" name="name"  placeholder="name"  class="form-control"> 
+              </div>
+              <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Email" name="email" aria-label="Username" aria-describedby="addon-wrapping">
+              </div>
+              <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Password" name="password" aria-label="Username" aria-describedby="addon-wrapping">
+              </div>
+              <button type="submit" class="btn btn-primary">Sign-Up</button>
+         </form>
+     
+          <p> DO YOU ALREADY HAVE AN ACCOUNT?<a href="{{route('route_login')}}">login</a></p>
+          <p> DO YOU WANT HOME?<a href="index.html">Home</a></p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

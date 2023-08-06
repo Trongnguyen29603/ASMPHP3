@@ -27,6 +27,8 @@ Route::get('/client', function () {
 //login& logour
 Route::match(['GET','POST'],'/login',[\App\Http\Controllers\Auth\LoginController::class,'login'])->name('route_login');
 Route::get('/logout',[\App\Http\Controllers\Auth\LoginController::class,'logout'])->name('route_logout');
+Route::match(['GET','POST'],'/sigin/add',[App\Http\Controllers\Auth\SignController::class,'add'])->name('route_sigin_add');
+
 Route::middleware(['auth','check.role'])->group(function(){
     //account
     Route::get('/account',[\App\Http\Controllers\Auth\SignController::class,'index'])->name('route_account');
@@ -58,3 +60,4 @@ Route::middleware(['auth','check.role'])->group(function(){
 // Route::match(['GET','POST'],'/khoa_hoc/delete/{id}',[App\Http\Controllers\Khoa_hocController::class,'delete'])->name('route_khoa_hoc_delete');
 
 Route::get('/khoahoc',[App\Http\Controllers\Client\KhoahocClient::class,'index'])->name('route_khoa_index');
+Route::match(['GET','POST'],'/bill/{id}',[App\Http\Controllers\Client\KhoahocClient::class,'detail'])->name('route_bill');

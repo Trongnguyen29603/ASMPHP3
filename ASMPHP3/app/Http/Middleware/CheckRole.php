@@ -18,7 +18,7 @@ class CheckRole
     public function handle(Request $request, Closure $next)
     {
         if(Auth::user()->role == 1){
-            dd('ko đủ quyền hạn để truy cập');
+            return redirect()->route('route_khoa_index');
         }
         return $next($request);
     }

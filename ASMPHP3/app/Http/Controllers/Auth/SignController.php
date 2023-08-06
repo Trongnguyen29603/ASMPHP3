@@ -33,4 +33,11 @@ class SignController extends Controller
         Session::flash('success','xóa thanh cong sv'.$id);
         return redirect()->route('route_account');
     }
+    public function add(Request $request){
+          if($request->isMethod('POST')){
+            $parmas = $request->except('_token');
+            $user = User::create($parmas);
+        }
+        return view('auth.add');
+    }
 }

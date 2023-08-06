@@ -20,8 +20,8 @@
        
         <select class="form-select" aria-label="Default select example" name="role">
             <option selected>Chọn Role</option>
-            <option value="1" @if($account->role == 1) selected @endif>Admin</option>
-            <option value="2" @if($account->role == 2) selected @endif>User</option>
+            <option value="0" @if($account->role == 0) selected @endif>Admin</option>
+            <option value="1" @if($account->role == 1) selected @endif>User</option>
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

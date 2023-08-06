@@ -72,8 +72,8 @@
                                                 </li>
                                                 <li><a href="contact.html">Contact</a></li>
                                                 <!-- Button -->
-                                                <li class="button-header margin-left "><a href="#" class="btn">Join</a></li>
-                                                <li class="button-header"><a href="login.html" class="btn btn3">Log in</a></li>
+                                                <li class="button-header margin-left "><a href="{{route('route_logout')}}" class="btn">Join</a></li>
+                                                <li class="button-header"><a href="{{route('route_login')}}" class="btn btn3">Log in</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -594,6 +594,7 @@
             </div>
         </section> --}}
         <!-- About Area End -->
+        @yield('content')
     </main>
     <footer>
         <div class="footer-wrappper footer-bg">
